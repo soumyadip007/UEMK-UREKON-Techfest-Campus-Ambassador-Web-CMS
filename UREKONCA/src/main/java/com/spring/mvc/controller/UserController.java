@@ -36,20 +36,7 @@ public class UserController {
 	@GetMapping("/alumni")
 	public String Allalumni(@RequestParam("id") int theId,Model theModel) {
 
-		AMS list=(AMS) amsService.findById(theId);
-		
-		int click=list.getClick();
-		
-		click++;
-		
-		list.setClick(click);
-		
-
-		amsService.save(list);
 	
-		
-		theModel.addAttribute("list",list);
-		
 		System.out.println(list);
 		return "user/alumni-details";
 	}
