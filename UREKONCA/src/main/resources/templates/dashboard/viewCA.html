@@ -80,51 +80,7 @@
           </a>
         </li>
 
-        
-         <li class="nav-item active ">
-	  <a class="nav-link " th:href="@{/admin/add-alumni}">
-          
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Add alumni</span>
-          </a>
-        </li>
-        
-  
-        
      
-              <li class="nav-item  ">
-	  <a class="nav-link " th:href="@{/admin/2019}">
-          
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>2019 Alumni</span>
-          </a>
-        </li>
-   
-      
-              <li class="nav-item  ">
-	  <a class="nav-link " th:href="@{/admin/2020}">
-          
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>2020 Alumni</span>
-          </a>
-        </li>
-      
-              <li class="nav-item  ">
-	  <a class="nav-link " th:href="@{/admin/2021}">
-          
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>2021 Alumni</span>
-          </a>
-        </li>
-    
-       
-              <li class="nav-item  ">
-	  <a class="nav-link  " th:href="@{/admin/alumni-count-chart}">
-          
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Alumni Count</span>
-          </a>
-        </li>
       </ul>
 
       <div id="content-wrapper">
@@ -133,8 +89,8 @@
 
 	
 	<div>
-	<form  th:action="@{/admin/add-alumni}"
-						 th:object="${alumni}" method="POST">
+	<form  th:action="@{/admin/add-ca}"
+						 th:object="${ca}" method="POST">
 	<table>
 	<tr>
 	
@@ -143,87 +99,78 @@
 	
 <tr>
 	<td><br><dt class="col-sm-3">Name:</dt></td>
-	<td><br><input type="text"  th:field="*{name}"   class="form-control" required="" placeholder="alumni Name"></td>
+	<td><br><input type="text"  th:field="*{name}"   class="form-control" required="" placeholder="alumni Name" readonly></td>
 	</tr>
 	<input type="hidden"  th:field="*{id}" th:value="*{id}"  class="form-control" required="" >
-	<input type="hidden"  th:field="*{click}" th:value="*{click}"  class="form-control" required="" >
+
+	
 	
 		<tr>
-	
-	<td><br><dt class="col-sm-3">Year:</dt></td>
-	<td><br><input type="text"  th:field="*{year}" class="form-control" required="" 
-	placeholder="Year of passing"></td>
-	</tr>
-	
-		<tr>
-	<td><br><dt class="col-sm-3">Course:</dt></td>
-	<td><br><input type="text"  th:field="*{course}" class="form-control" 
-	required="" placeholder="Course"></td>
+	<td><br><dt class="col-sm-3">Email:</dt></td>
+	<td><br><input type="text"  th:field="*{email}" class="form-control" 
+	required="" placeholder="Email" readonly></td>
 	</tr>
 			<tr>
-	<td><br><dt class="col-sm-3">Dept.: </dt></td>
-	<td><br><input type="text"  th:field="*{dept}"  class="form-control" 
-	required="" placeholder="Department"></td>
+	<td><br><dt class="col-sm-3">City: </dt></td>
+	<td><br><input type="text"  th:field="*{city}"  class="form-control" 
+	required="" placeholder="City" readonly></td>
 	</tr>
 	
 		<tr>
-	<td><br><dt class="col-sm-3">Enrollment ID: </dt></td>
-	<td><br><input type="text"  th:field="*{enrl}"  class="form-control" 
-	required="" placeholder="Enrollment ID:"></td>
+	<td><br><dt class="col-sm-3">College: </dt></td>
+	<td><br><input type="text"  th:field="*{college}"  class="form-control" 
+	required="" placeholder="College:" readonly></td>
 	</tr>
 	
 	
 	
 		<tr>
-	<td><br><dt class="col-sm-3">DGPA: </dt></td>
-	<td><br><input type="text"  th:field="*{dgpa}" 
-	class="form-control" required="" placeholder="DGPA"></td>
+	<td><br><dt class="col-sm-3">Year: </dt></td>
+	<td><br><input type="text"  th:field="*{yr}" 
+	class="form-control" required="" placeholder="Year" readonly></td>
 	</tr>
-			<tr>
-	<td><br><dt class="col-sm-3">Email Id:</dt></td>
-	<td><br><input type="email"  th:field="*{email}" 
-	 class="form-control" required="" placeholder="Email Id"></td>
+	
+	
+		<tr>
+	<td><br><dt class="col-sm-3">Phone:</dt></td>
+	<td><br><input type="text"  th:field="*{ph}" 
+	class="form-control" required="" placeholder="Phone" readonly></td>
 	</tr>
+	
 	
 	<tr>
-	<td><br><dt class="col-sm-3">Address:</dt></td>
-	<td><br><textarea th:field="*{address}" rows="2"
+	<td><br><dt class="col-sm-3">Entrepreneurship:</dt></td>
+	<td><br><textarea th:field="*{entrepreneurship}" rows="2"
 	 cols="150" name="mess" class="form-control" id="email"  
-	 required="" placeholder="Address"></textarea><br></td>
+	 required="" placeholder="Entrepreneurship" readonly></textarea><br></td>
 	</tr>
 	
 	
-		<tr>
-	<td><br><dt class="col-sm-3">Contact No.:</dt></td>
-	<td><br><input type="number"  th:field="*{ph}" 
-	 class="form-control" required="" placeholder="Contact No."></td>
-	</tr>
-	
+			
 	<tr>
-	<td><br><dt class="col-sm-3">Placed:</dt></td>
-	<td><br><input type="text"  th:field="*{placed}" 
-	 class="form-control" required="" placeholder="Placed"></td>
+	<td><br><dt class="col-sm-3">Involvements:</dt></td>
+	<td><br><textarea th:field="*{involvements}" rows="2"
+	 cols="150" name="mess" class="form-control" id="email"  
+	 required="" placeholder="Involvements" readonly></textarea><br></td>
 	</tr>
 	
+				
 	<tr>
-	<td><br><dt class="col-sm-3">Chapter:</dt></td>
-	<td><br><input type="text"  th:field="*{chapter}" 
-	 class="form-control" required="" placeholder="Member of any Chapter"></td>
-	</tr>
-		<tr>
-	<td><br><dt class="col-sm-3">Image:</dt></td>
-	<td><br><input type="text"  th:field="*{image}" 
-	 class="form-control" required="" placeholder="Image"></td>
+	<td><br><dt class="col-sm-3">Why:</dt></td>
+	<td><br><textarea th:field="*{why}" rows="2"
+	 cols="150" name="mess" class="form-control" id="email"  
+	 required="" placeholder="Why" readonly></textarea><br></td>
 	</tr>
 	
 	
-	
+				
 	<tr>
-	<td><br><dt class="col-sm-3">Achivements:</dt></td>
-	<td><br><textarea th:field="*{achivements}" rows="10" 
-	cols="150" name="mess" class="form-control" id="email" 
-	 required="" placeholder="Achivementsl"></textarea><br></td>
+	<td><br><dt class="col-sm-3">Startup:</dt></td>
+	<td><br><textarea th:field="*{startup}" rows="2"
+	 cols="150" name="mess" class="form-control" id="email"  
+	 required="" placeholder="Which is your favourite startup and why?" readonly></textarea><br></td>
 	</tr>
+	
 	
 <br><br>
 	<tr>
