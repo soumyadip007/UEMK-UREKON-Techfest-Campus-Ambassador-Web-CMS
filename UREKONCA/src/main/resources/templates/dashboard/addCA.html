@@ -80,51 +80,7 @@
           </a>
         </li>
 
-        
-         <li class="nav-item active ">
-	  <a class="nav-link " th:href="@{/admin/add-alumni}">
-          
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Add alumni</span>
-          </a>
-        </li>
-        
-  
-        
      
-              <li class="nav-item  ">
-	  <a class="nav-link " th:href="@{/admin/2019}">
-          
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>2019 Alumni</span>
-          </a>
-        </li>
-   
-      
-              <li class="nav-item  ">
-	  <a class="nav-link " th:href="@{/admin/2020}">
-          
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>2020 Alumni</span>
-          </a>
-        </li>
-      
-              <li class="nav-item  ">
-	  <a class="nav-link " th:href="@{/admin/2021}">
-          
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>2021 Alumni</span>
-          </a>
-        </li>
-    
-       
-              <li class="nav-item  ">
-	  <a class="nav-link  " th:href="@{/admin/alumni-count-chart}">
-          
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Alumni Count</span>
-          </a>
-        </li>
       </ul>
 
       <div id="content-wrapper">
@@ -133,8 +89,8 @@
 
 	
 	<div>
-	<form  th:action="@{/admin/add-alumni}"
-						 th:object="${alumni}" method="POST">
+	<form  th:action="@{/admin/add-ca}"
+						 th:object="${ca}" method="POST">
 	<table>
 	<tr>
 	
@@ -193,9 +149,9 @@
 			
 	<tr>
 	<td><br><dt class="col-sm-3">Involvements:</dt></td>
-	<td><br><textarea th:field="*{entrepreneurship}" rows="2"
+	<td><br><textarea th:field="*{involvements}" rows="2"
 	 cols="150" name="mess" class="form-control" id="email"  
-	 required="" placeholder="Entrepreneurship"></textarea><br></td>
+	 required="" placeholder="Involvements"></textarea><br></td>
 	</tr>
 	
 				
