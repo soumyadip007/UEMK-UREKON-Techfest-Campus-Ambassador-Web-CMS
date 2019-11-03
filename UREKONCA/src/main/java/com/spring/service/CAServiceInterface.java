@@ -18,14 +18,6 @@ public interface CAServiceInterface {
 	public CA findById(int theId); 
 
 	public void deleteById(int theId);
-	
-	public List<CA> findByYear(String div);
 
-	public List<CA> findByDept(String div);
-	
-	public List<CA> findByCourse(String div);
-	
-	public CA findByEnrl(String div);
-	
 
 }

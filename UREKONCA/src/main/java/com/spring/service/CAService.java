@@ -64,55 +64,6 @@ public class CAService implements CAServiceInterface {
 	}
 
 
-	@Override
-	public List<CA> findByYear(String year) {
-		
-	return amsRepository.findByYear(year);
-	}
 
-
-	@Override
-	public List<CA> findByDept(String dept) {
-		
-		return amsRepository.findByDept(dept);
-	}
-
-
-	@Override
-	public List<CA> findByCourse(String course) {
-		
-		return amsRepository.findByCourse(course);
-	}
-
-	@Override
-	public CA findByEnrl(String course) {
-		
-		return amsRepository.findByEnrl(course);
-	}
-//
-//	@Override
-//	public List<AMS> findByDivision(String div) {
-//	
-////		Optional<ams> result=amsRepository.findByDivision(div);
-////		
-////		List<ams> ams=null;
-////		
-////		if(result.isPresent())
-////		{
-////			ams.add(result.get());
-////		}
-////		else {
-////			throw new RuntimeException("Did not find ams div - " + div);
-////		}
-//		
-//		return amsRepository.findByDivision(div);
-//	}
-//
-//
-//	@Override
-//	public List<AMS> findByArea(String area) {
-//		
-//		return amsRepository.findByArea(area);
-//	}
 
 }
