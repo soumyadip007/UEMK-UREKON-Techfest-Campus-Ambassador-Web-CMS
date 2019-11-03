@@ -15,7 +15,7 @@ import com.spring.entity.CA;
  *
  */
 @Repository("amsRepository")
-public interface AMSRepository extends JpaRepository<CA, Integer> {
+public interface CARepository extends JpaRepository<CA, Integer> {
 
 	List<CA> findByYear(String div);
 
