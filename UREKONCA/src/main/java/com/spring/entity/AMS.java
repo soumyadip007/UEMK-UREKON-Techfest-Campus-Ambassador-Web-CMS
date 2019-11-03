@@ -156,6 +156,13 @@ public class AMS {
 		this.startup = startup;
 	}
 
+	@Override
+	public String toString() {
+		return "AMS [id=" + id + ", name=" + name + ", email=" + email + ", city=" + city + ", college=" + college
+				+ ", yr=" + yr + ", entrepreneurship=" + entrepreneurship + ", involvements=" + involvements + ", ph="
+				+ ph + ", achivements=" + achivements + ", Why=" + Why + ", startup=" + startup + "]";
+	}
+
 	
 
 
