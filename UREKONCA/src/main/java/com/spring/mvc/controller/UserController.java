@@ -25,7 +25,7 @@ public class UserController {
 
 	private CAService caService;
 	@Autowired   
-	public UserController(caService obj)
+	public UserController(CAService obj)
 	{
 		this.caService=obj;
 	
