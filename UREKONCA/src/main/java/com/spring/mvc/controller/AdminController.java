@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring.entity.CA;
-import com.spring.service.AMSService;
+import com.spring.service.CAService;
 /**
  * 
  * @author Soumyadip Chowdhury
@@ -26,9 +26,9 @@ import com.spring.service.AMSService;
 public class AdminController {
 	
 
-	private AMSService amsService;
+	private CAService amsService;
 	@Autowired   
-	public AdminController(AMSService obj)
+	public AdminController(CAService obj)
 	{
 		this.amsService=obj;
 	

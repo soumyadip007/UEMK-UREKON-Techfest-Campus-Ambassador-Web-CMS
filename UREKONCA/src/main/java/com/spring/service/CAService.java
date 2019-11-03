@@ -15,14 +15,14 @@ import com.spring.entity.CA;
  *
  */
 @Service
-public class AMSService implements AMSServiceInterface {
+public class CAService implements AMSServiceInterface {
 
 	
 	private AMSRepository amsRepository;
 	
 
 	@Autowired   
-	public AMSService(AMSRepository obj)
+	public CAService(AMSRepository obj)
 	{
 		amsRepository=obj;
 	}
