@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.dao.AMSRepository;
-import com.spring.entity.AMS;
+import com.spring.entity.CA;
 
 /**
  * 
@@ -29,23 +29,23 @@ public class AMSService implements AMSServiceInterface {
 	
 	
 	@Override
-	public List<AMS> findAll() {
+	public List<CA> findAll() {
 	
 		return amsRepository.findAll();
 	}
 
 	@Override
-	public void save(AMS ams) {
+	public void save(CA ams) {
 		
 		amsRepository.save(ams);
 	}
 
 	@Override
-	public AMS findById(int theId) {
+	public CA findById(int theId) {
 		
-		Optional<AMS> result=amsRepository.findById(theId);
+		Optional<CA> result=amsRepository.findById(theId);
 		
-		AMS ams=null;
+		CA ams=null;
 		
 		if(result.isPresent())
 		{
@@ -65,27 +65,27 @@ public class AMSService implements AMSServiceInterface {
 
 
 	@Override
-	public List<AMS> findByYear(String year) {
+	public List<CA> findByYear(String year) {
 		
 	return amsRepository.findByYear(year);
 	}
 
 
 	@Override
-	public List<AMS> findByDept(String dept) {
+	public List<CA> findByDept(String dept) {
 		
 		return amsRepository.findByDept(dept);
 	}
 
 
 	@Override
-	public List<AMS> findByCourse(String course) {
+	public List<CA> findByCourse(String course) {
 		
 		return amsRepository.findByCourse(course);
 	}
 
 	@Override
-	public AMS findByEnrl(String course) {
+	public CA findByEnrl(String course) {
 		
 		return amsRepository.findByEnrl(course);
 	}

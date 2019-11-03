@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.spring.entity.AMS;
+import com.spring.entity.CA;
 
 /**
  * 
@@ -15,15 +15,15 @@ import com.spring.entity.AMS;
  *
  */
 @Repository("amsRepository")
-public interface AMSRepository extends JpaRepository<AMS, Integer> {
+public interface AMSRepository extends JpaRepository<CA, Integer> {
 
-	List<AMS> findByYear(String div);
+	List<CA> findByYear(String div);
 
-	List<AMS> findByDept(String div);
+	List<CA> findByDept(String div);
 	
-	List<AMS> findByCourse(String div);
+	List<CA> findByCourse(String div);
 	
-	AMS findByEnrl(String div);
+	CA findByEnrl(String div);
 	
 //	List<AMS> findByArea(String area);
 	

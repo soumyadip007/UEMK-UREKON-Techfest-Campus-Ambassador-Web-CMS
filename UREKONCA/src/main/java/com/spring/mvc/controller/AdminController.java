@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.spring.entity.AMS;
+import com.spring.entity.CA;
 import com.spring.service.AMSService;
 /**
  * 
@@ -37,7 +37,7 @@ public class AdminController {
 	@GetMapping("/add-ca")
 	public String Addca(Model theModel) {
 	
-		AMS ca=new AMS();
+		CA ca=new CA();
 		
 		theModel.addAttribute("ca",ca);
 		
@@ -45,7 +45,7 @@ public class AdminController {
 	}
 	
 	@PostMapping("/add-ca")
-	public String Saveca(@ModelAttribute("ca") AMS ca) {
+	public String Saveca(@ModelAttribute("ca") CA ca) {
 
 	
 		amsService.save(ca);
@@ -56,7 +56,7 @@ public class AdminController {
 	@GetMapping("/all-ca")
 	public String Allca(Model theModel) {
 
-		List<AMS> list=amsService.findAll();
+		List<CA> list=amsService.findAll();
 		
 		theModel.addAttribute("allca",list);
 		
@@ -67,7 +67,7 @@ public class AdminController {
 	@GetMapping("/update-ca")
 	public String Updateca(@RequestParam("id") int theId,Model theModel) {
 
-		AMS ca=amsService.findById(theId);
+		CA ca=amsService.findById(theId);
 		
 		theModel.addAttribute("ca",ca);
 		

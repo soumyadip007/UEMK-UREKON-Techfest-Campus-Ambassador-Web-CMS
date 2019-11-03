@@ -1,7 +1,7 @@
 package com.spring.service;
 
 import java.util.List;
-import com.spring.entity.AMS;
+import com.spring.entity.CA;
 
 /**
  * 
@@ -11,21 +11,21 @@ import com.spring.entity.AMS;
  */
 public interface AMSServiceInterface {
 
-	public List<AMS> findAll();
+	public List<CA> findAll();
 
-	public void save(AMS ams);
+	public void save(CA ams);
 
-	public AMS findById(int theId); 
+	public CA findById(int theId); 
 
 	public void deleteById(int theId);
 	
-	public List<AMS> findByYear(String div);
+	public List<CA> findByYear(String div);
 
-	public List<AMS> findByDept(String div);
+	public List<CA> findByDept(String div);
 	
-	public List<AMS> findByCourse(String div);
+	public List<CA> findByCourse(String div);
 	
-	public AMS findByEnrl(String div);
+	public CA findByEnrl(String div);
 	
 
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.spring.entity.AMS;
+import com.spring.entity.CA;
 import com.spring.service.AMSService;
 /**
  * 
@@ -46,7 +46,7 @@ public class UserController {
 	@GetMapping("/index")
 	public String all(Model theModel) {
 
-		List<AMS> list=amsService.findAll();
+		List<CA> list=amsService.findAll();
 		
 		theModel.addAttribute("allalumni",list);
 		

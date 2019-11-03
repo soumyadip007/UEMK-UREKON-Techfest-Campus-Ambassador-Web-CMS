@@ -16,7 +16,7 @@ import org.springframework.data.annotation.Transient;
  */
 @Entity
 @Table(name = "ca")
-public class AMS {
+public class CA {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
