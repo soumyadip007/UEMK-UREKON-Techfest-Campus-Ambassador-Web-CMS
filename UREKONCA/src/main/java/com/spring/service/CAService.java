@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spring.dao.AMSRepository;
+import com.spring.dao.CARepository;
 import com.spring.entity.CA;
 
 /**
@@ -18,11 +18,11 @@ import com.spring.entity.CA;
 public class CAService implements CAServiceInterface {
 
 	
-	private AMSRepository amsRepository;
+	private CARepository amsRepository;
 	
 
 	@Autowired   
-	public CAService(AMSRepository obj)
+	public CAService(CARepository obj)
 	{
 		amsRepository=obj;
 	}
