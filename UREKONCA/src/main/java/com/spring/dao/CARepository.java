@@ -14,7 +14,7 @@ import com.spring.entity.CA;
  * @github soumyadip007
  *
  */
-@Repository("amsRepository")
+@Repository("caRepository")
 public interface CARepository extends JpaRepository<CA, Integer> {
 
 	List<CA> findByYear(String div);
@@ -25,9 +25,5 @@ public interface CARepository extends JpaRepository<CA, Integer> {
 	
 	CA findByEnrl(String div);
 	
-//	List<AMS> findByArea(String area);
-	
-	//@Query(value="select distinct division from pujo")
-	//List<Pujo>  findDistinctById(String id);
 
 }

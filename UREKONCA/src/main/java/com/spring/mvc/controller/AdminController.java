@@ -34,16 +34,7 @@ public class AdminController {
 	
 	}
 
-	@GetMapping("/add-ca")
-	public String Addca(Model theModel) {
-	
-		CA ca=new CA();
-		
-		theModel.addAttribute("ca",ca);
-		
-		return "dashboard/addca";
-	}
-	
+-
 	@PostMapping("/add-ca")
 	public String Saveca(@ModelAttribute("ca") CA ca) {
 
