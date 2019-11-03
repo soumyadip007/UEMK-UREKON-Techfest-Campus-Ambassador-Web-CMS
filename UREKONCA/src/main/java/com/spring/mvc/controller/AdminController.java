@@ -76,6 +76,16 @@ public class AdminController {
 		return "dashboard/addca";
 	}
 	
+	
+	@GetMapping("/view-ca")
+	public String ViewCa(@RequestParam("id") int theId,Model theModel) {
+
+		CA ca=amsService.findById(theId);
+		
+		theModel.addAttribute("ca",ca);
+		
+		return "dashboard/viewCA";
+	}
 	@GetMapping("/delete-ca")
 	public String Deleteca(@RequestParam("id") int theId) {
 
