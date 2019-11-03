@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring.entity.CA;
-import com.spring.service.AMSService;
+import com.spring.service.CAService;
 /**
  * 
  * @author Soumyadip Chowdhury
@@ -23,30 +23,21 @@ import com.spring.service.AMSService;
 public class UserController {
 	
 
-	private AMSService amsService;
+	private CAService caService;
 	@Autowired   
-	public UserController(AMSService obj)
+	public UserController(caService obj)
 	{
-		this.amsService=obj;
+		this.caService=obj;
 	
 	}
 
 	
-	
-	@GetMapping("/ca")
-	public String Allca(@RequestParam("id") int theId,Model theModel) {
-
-	
-		System.out.println(list);
-		return "user/ca-details";
-	}
-
 
 
 	@GetMapping("/index")
 	public String all(Model theModel) {
 
-		List<CA> list=amsService.findAll();
+		List<CA> list=caService.findAll();
 		
 		theModel.addAttribute("allca",list);
 		
