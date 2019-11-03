@@ -171,7 +171,8 @@
                           <th>City</th>
                          <th>Email</th>
                        <th>Mobile</th>
-                     
+                      <th>Update</th>
+                       <th>Delete</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -183,7 +184,8 @@
                       <th>City</th>
                          <th>Email</th>
                        <th>Mobile</th>
-                     
+                                           <th>Update</th>
+                       <th>Delete</th>
                     </tr>
                   <tbody>
      	<tr th:each="alumni : ${allca}">
@@ -195,10 +197,10 @@
 								<td   th:text="${alumni.city}" />	
 					<td  th:text="${alumni.email}" />	
 				<td th:text="${alumni.ph}" />	
-				<td > <a th:href="@{/admin/update-alumni(id=${alumni.id})}" class="btn btn-success">Update</a></td>
+				<td > <a th:href="@{/admin/update-ca(id=${alumni.id})}" class="btn btn-success">Update</a></td>
 					
 					
-				<td ><a th:href="@{/admin/delete-alumni(id=${alumni.id})}" class="btn btn-danger">Delete</a></td>
+				<td ><a th:href="@{/admin/delete-ca(id=${alumni.id})}" class="btn btn-danger">Delete</a></td>
 		</tr>
        
                   </tbody>
