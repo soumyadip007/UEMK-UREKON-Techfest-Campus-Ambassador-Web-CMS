@@ -60,6 +60,102 @@ public class AMS {
 	@Column(name = "startup")
 	private String startup;
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getCollege() {
+		return college;
+	}
+
+	public void setCollege(String college) {
+		this.college = college;
+	}
+
+	public String getYr() {
+		return yr;
+	}
+
+	public void setYr(String yr) {
+		this.yr = yr;
+	}
+
+	public String getEntrepreneurship() {
+		return entrepreneurship;
+	}
+
+	public void setEntrepreneurship(String entrepreneurship) {
+		this.entrepreneurship = entrepreneurship;
+	}
+
+	public String getInvolvements() {
+		return involvements;
+	}
+
+	public void setInvolvements(String involvements) {
+		this.involvements = involvements;
+	}
+
+	public String getPh() {
+		return ph;
+	}
+
+	public void setPh(String ph) {
+		this.ph = ph;
+	}
+
+	public String getAchivements() {
+		return achivements;
+	}
+
+	public void setAchivements(String achivements) {
+		this.achivements = achivements;
+	}
+
+	public String getWhy() {
+		return Why;
+	}
+
+	public void setWhy(String why) {
+		Why = why;
+	}
+
+	public String getStartup() {
+		return startup;
+	}
+
+	public void setStartup(String startup) {
+		this.startup = startup;
+	}
+
 	
 
 
