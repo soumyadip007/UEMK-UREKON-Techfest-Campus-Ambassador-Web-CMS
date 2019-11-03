@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.spring.mvc.rest</groupId>
-	<artifactId>AMS</artifactId>
+	<artifactId>CA</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Pujo</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Developed By Soumyadip Chowdhury</description>
 <packaging>war</packaging>
 	<properties>
 		<java.version>1.8</java.version>
