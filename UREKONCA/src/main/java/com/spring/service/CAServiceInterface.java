@@ -9,7 +9,7 @@ import com.spring.entity.CA;
  * @github soumyadip007
  *
  */
-public interface AMSServiceInterface {
+public interface CAServiceInterface {
 
 	public List<CA> findAll();
 
