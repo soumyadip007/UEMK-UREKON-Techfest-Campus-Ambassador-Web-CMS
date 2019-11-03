@@ -15,7 +15,7 @@ import com.spring.entity.CA;
  *
  */
 @Service
-public class CAService implements AMSServiceInterface {
+public class CAService implements CAServiceInterface {
 
 	
 	private AMSRepository amsRepository;
