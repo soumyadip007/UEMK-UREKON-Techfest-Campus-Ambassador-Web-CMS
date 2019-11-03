@@ -34,212 +34,53 @@ public class AdminController {
 	
 	}
 
-	@GetMapping("/add-alumni")
-	public String Addalumni(Model theModel) {
+	@GetMapping("/add-ca")
+	public String Addca(Model theModel) {
 	
-		AMS alumni=new AMS();
+		AMS ca=new AMS();
 		
-		theModel.addAttribute("alumni",alumni);
+		theModel.addAttribute("ca",ca);
 		
-		return "dashboard/addAlumni";
+		return "dashboard/addca";
 	}
 	
-	@PostMapping("/add-alumni")
-	public String Savealumni(@ModelAttribute("alumni") AMS alumni) {
+	@PostMapping("/add-ca")
+	public String Saveca(@ModelAttribute("ca") AMS ca) {
 
 	
-		amsService.save(alumni);
+		amsService.save(ca);
 	
-		return "redirect:/admin/add-alumni";
+		return "redirect:/admin/add-ca";
 	}
 	
-	@GetMapping("/all-alumni")
-	public String Allalumni(Model theModel) {
+	@GetMapping("/all-ca")
+	public String Allca(Model theModel) {
 
 		List<AMS> list=amsService.findAll();
 		
-		theModel.addAttribute("allalumni",list);
+		theModel.addAttribute("allca",list);
 		
-		return "dashboard/alumniList";
+		return "dashboard/caList";
 	}
 
 	
-	@GetMapping("/update-alumni")
-	public String Updatealumni(@RequestParam("id") int theId,Model theModel) {
+	@GetMapping("/update-ca")
+	public String Updateca(@RequestParam("id") int theId,Model theModel) {
 
-		AMS alumni=amsService.findById(theId);
+		AMS ca=amsService.findById(theId);
 		
-		theModel.addAttribute("alumni",alumni);
+		theModel.addAttribute("ca",ca);
 		
-		return "dashboard/addalumni";
+		return "dashboard/addca";
 	}
 	
-	@GetMapping("/delete-alumni")
-	public String Deletealumni(@RequestParam("id") int theId) {
+	@GetMapping("/delete-ca")
+	public String Deleteca(@RequestParam("id") int theId) {
 
 		amsService.deleteById(theId);
 	
-		return "redirect:/admin/all-alumni";
+		return "redirect:/admin/all-ca";
 	}
 
 
-	
-	@GetMapping("/2019")
-	public String year2019(Model theModel) {
-
-		List<AMS> list=amsService.findByYear("2019");
-		
-		theModel.addAttribute("allalumni",list);
-		
-		return "dashboard/2019";
-	}
-	
-	@GetMapping("/2020")
-	public String year2020(Model theModel) {
-
-		List<AMS> list=amsService.findByYear("2020");
-		
-		theModel.addAttribute("allalumni",list);
-		
-		return "dashboard/2020";
-	}
-	
-	
-	@GetMapping("/2021")
-	public String year2018(Model theModel) {
-
-		List<AMS> list=amsService.findByYear("2021");
-		
-		theModel.addAttribute("allalumni",list);
-		
-		return "dashboard/2021";
-	}
-	
-	
-	
-
-	@GetMapping("/alumni-count-chart")
-	public String Chart(Model theModel) {
-	
-		List<AMS> list=amsService.findAll();
-		 
-		theModel.addAttribute("allalumni",list);
-		
-		int a=0;
-		int b=0;
-		int c=0;
-		
-		for(AMS obj:list)
-		{
-			if(obj.getYear().equals("2019"))
-			{
-				a+=obj.getClick();
-			}
-			else if(obj.getYear().equals("2020"))
-			{
-				b+=obj.getClick();
-			}
-			else if(obj.getYear().equals("2021"))
-			{
-				c+=obj.getClick();
-			}
-			
-		}
-		theModel.addAttribute("a",a);
-		
-		theModel.addAttribute("b",b);
-		
-		theModel.addAttribute("c",c);
-		
-		System.out.println("a="+a+"b="+b+"c="+c);
-		return "dashboard/chart";
-	}
 }
-
-
-//
-//
-//@GetMapping("/alumni-count-chart")
-//public String Chart(Model theModel) {
-//
-//	List<AMS> list=amsService.findAll();
-//	 
-//	theModel.addAttribute("allalumni",list);
-//	
-//	int a=0;
-//	int b=0;
-//	int c=0;
-//	
-//	for(AMS obj:list)
-//	{
-//		if(obj.getDivision().equals("North"))
-//		{
-//			a+=obj.getCount();
-//		}
-//		else if(obj.getDivision().equals("South"))
-//		{
-//			b+=obj.getCount();
-//		}
-//		else if(obj.getDivision().equals("Central"))
-//		{
-//			c+=obj.getCount();
-//		}
-//		
-//	}
-//	theModel.addAttribute("a",a);
-//	
-//	theModel.addAttribute("b",b);
-//	
-//	theModel.addAttribute("c",c);
-//	
-//	System.out.println("a="+a+"b="+b+"c="+c);
-//	return "dashboard/chart";
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//
-//@GetMapping("/alumni/2017")
-//public String Northalumni(Model theModel) {
-//
-//	List<AMS> list=amsService.findByDivision("North");
-//	
-//	theModel.addAttribute("allalumni",list);
-//	
-//	
-//	
-//	return "dashboard/northalumniList";
-//}
-//
-//@GetMapping("/alumni/2018")
-//public String centralalumni(Model theModel) {
-//
-//	List<AMS> list=amsService.findByDivision("Central");
-//	
-//	theModel.addAttribute("allalumni",list);
-//	
-//	return "dashboard/centralalumniList";
-//}
-//
-//@GetMapping("/south-kolkata")
-//public String southalumni(Model theModel) {
-//
-//	List<AMS> list=amsService.findByDivision("South");
-//	
-//	theModel.addAttribute("allalumni",list);
-//	
-//	return "dashboard/southalumniList";
-//}
-
