@@ -15,7 +15,7 @@ import org.springframework.data.annotation.Transient;
  *
  */
 @Entity
-@Table(name = "ams")
+@Table(name = "ca")
 public class AMS {
 
 	@Id
@@ -26,31 +26,31 @@ public class AMS {
 	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "year")
-	private String year;
+	@Column(name = "email")
+	private String email;
 	
 	@Column(name = "course")
 	private String course;
 	
-	@Column(name = "dept")
-	private String dept;
+	@Column(name = "ph")
+	private String ph;
 	
-	@Column(name = "enrl")
-	private String enrl;
+	@Column(name = "city")
+	private String city;
 	
-	@Column(name = "dgpa")
-	private String dgpa;
+	@Column(name = "college")
+	private String college;
 	
 
-	@Column(name = "chapter")
-	private String chapter;
+	@Column(name = "yr")
+	private String yr;
 	
 	
-	@Column(name = "email")
-	private String email;
+	@Column(name = "entrepreneurship")
+	private String entrepreneurship;
 	
-	@Column(name = "address")
-	private String address;
+	@Column(name = "involvements")
+	private String involvements;
 	
 	@Column(name = "ph")
 	private String ph;
@@ -59,18 +59,13 @@ public class AMS {
 	@Column(name = "achivements")
 	private String achivements;
 	
-	@Column(name = "placed")
-	private String placed;
+	@Column(name = "Why")
+	private String Why;
 	
-	@Column(name = "image")
-	private String image;
-	
+	@Column(name = "startup")
+	private String startup;
 
-	@Column(name = "click")
-	@Transient
-	private int click;
 	
-
 
 
 }
