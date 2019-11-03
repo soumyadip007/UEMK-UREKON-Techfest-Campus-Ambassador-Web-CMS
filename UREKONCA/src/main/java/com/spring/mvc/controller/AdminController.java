@@ -34,7 +34,7 @@ public class AdminController {
 	
 	}
 
--
+
 	@PostMapping("/add-ca")
 	public String Saveca(@ModelAttribute("ca") CA ca) {
 
