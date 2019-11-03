@@ -18,32 +18,32 @@ import com.spring.entity.CA;
 public class CAService implements CAServiceInterface {
 
 	
-	private CARepository amsRepository;
+	private CARepository caRepository;
 	
 
 	@Autowired   
 	public CAService(CARepository obj)
 	{
-		amsRepository=obj;
+		caRepository=obj;
 	}
 	
 	
 	@Override
 	public List<CA> findAll() {
 	
-		return amsRepository.findAll();
+		return caRepository.findAll();
 	}
 
 	@Override
 	public void save(CA ams) {
 		
-		amsRepository.save(ams);
+		caRepository.save(ams);
 	}
 
 	@Override
 	public CA findById(int theId) {
 		
-		Optional<CA> result=amsRepository.findById(theId);
+		Optional<CA> result=caRepository.findById(theId);
 		
 		CA ams=null;
 		
@@ -60,7 +60,7 @@ public class CAService implements CAServiceInterface {
 
 	@Override
 	public void deleteById(int theId) {
-		amsRepository.deleteById(theId);
+		caRepository.deleteById(theId);
 	}
 
 
