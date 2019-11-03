@@ -7,8 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring.entity.CA;
 import com.spring.service.CAService;
@@ -30,20 +31,30 @@ public class UserController {
 		this.caService=obj;
 	
 	}
-
 	
 
 
 	@GetMapping("/index")
 	public String all(Model theModel) {
 
-		List<CA> list=caService.findAll();
+		CA ca=new CA();
 		
-		theModel.addAttribute("allca",list);
+		theModel.addAttribute("ca",ca);
+		
 		
 		return "user/index";
 	}
 	
+
+	@PostMapping("/save")
+	public String Saveca(@ModelAttribute("ca") CA ca) {
+
+
+		caService.save(ca);
+	
+	
+		return "redirect:/user/index";
+	}
 	
 
 
