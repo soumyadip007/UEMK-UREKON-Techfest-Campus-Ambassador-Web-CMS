@@ -166,34 +166,35 @@
                     <tr>
                      	<th>Id</th> 
                       <th>Name</th>
-                      <th>Enrollment</th>
+                      <th>College</th>
                       <th>Year</th>
-                         <th>Course</th>
-                       <th>Dept.</th>
-                      <th>Update</th>
-                        <th>Delete</th>
+                          <th>City</th>
+                         <th>Email</th>
+                       <th>Mobile</th>
+                     
                     </tr>
                   </thead>
                   <tfoot>
                     <tr> 		
                     	<th>Id</th> 
                       <th>Name</th>
-                      <th>Enrollment</th>
+                      <th>College</th>
                       <th>Year</th>
-                         <th>Course</th>
-                       <th>Dept.</th>
-                      <th>Update</th>
-                        <th>Delete</th>
+                      <th>City</th>
+                         <th>Email</th>
+                       <th>Mobile</th>
+                     
                     </tr>
                   <tbody>
-     	<tr th:each="alumni : ${allalumni}">
+     	<tr th:each="alumni : ${allca}">
        	
   		<td  th:text="${alumni.id}" />	
 				<td   th:text="${alumni.name}" />	
-				 <td th:text="${alumni.enrl}"/>
-				<td   th:text="${alumni.year}" />	
-					<td  th:text="${alumni.course}" />	
-				<td th:text="${alumni.dept}" />	
+				 <td th:text="${alumni.college}"/>
+				<td   th:text="${alumni.yr}" />	
+								<td   th:text="${alumni.city}" />	
+					<td  th:text="${alumni.email}" />	
+				<td th:text="${alumni.ph}" />	
 				<td > <a th:href="@{/admin/update-alumni(id=${alumni.id})}" class="btn btn-success">Update</a></td>
 					
 					
@@ -204,7 +205,7 @@
                 </table>
               </div>
             </div>
-            <div class="card-footer small text-muted">AMS @Admin</div>
+            <div class="card-footer small text-muted">CA @Admin</div>
           </div>
 
         <!-- /.container-fluid -->
@@ -213,7 +214,7 @@
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright ©Soumyadip AMS 2019</span>
+              <span>Copyright ©Soumyadip 2019-20</span>
             </div>
           </div>
         </footer>
