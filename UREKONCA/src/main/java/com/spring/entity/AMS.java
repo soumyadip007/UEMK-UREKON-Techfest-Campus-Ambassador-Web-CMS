@@ -29,12 +29,7 @@ public class AMS {
 	@Column(name = "email")
 	private String email;
 	
-	@Column(name = "course")
-	private String course;
-	
-	@Column(name = "ph")
-	private String ph;
-	
+
 	@Column(name = "city")
 	private String city;
 	
