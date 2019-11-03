@@ -50,9 +50,6 @@ public class CA {
 	@Column(name = "ph")
 	private String ph;
 	
-
-	@Column(name = "achivements")
-	private String achivements;
 	
 	@Column(name = "Why")
 	private String Why;
@@ -132,14 +129,6 @@ public class CA {
 		this.ph = ph;
 	}
 
-	public String getAchivements() {
-		return achivements;
-	}
-
-	public void setAchivements(String achivements) {
-		this.achivements = achivements;
-	}
-
 	public String getWhy() {
 		return Why;
 	}
@@ -160,7 +149,7 @@ public class CA {
 	public String toString() {
 		return "AMS [id=" + id + ", name=" + name + ", email=" + email + ", city=" + city + ", college=" + college
 				+ ", yr=" + yr + ", entrepreneurship=" + entrepreneurship + ", involvements=" + involvements + ", ph="
-				+ ph + ", achivements=" + achivements + ", Why=" + Why + ", startup=" + startup + "]";
+				+ ph +  ", Why=" + Why + ", startup=" + startup + "]";
 	}
 
 	
