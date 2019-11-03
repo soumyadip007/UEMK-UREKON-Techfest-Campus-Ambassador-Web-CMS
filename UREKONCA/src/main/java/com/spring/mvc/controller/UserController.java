@@ -33,12 +33,12 @@ public class UserController {
 
 	
 	
-	@GetMapping("/alumni")
-	public String Allalumni(@RequestParam("id") int theId,Model theModel) {
+	@GetMapping("/ca")
+	public String Allca(@RequestParam("id") int theId,Model theModel) {
 
 	
 		System.out.println(list);
-		return "user/alumni-details";
+		return "user/ca-details";
 	}
 
 
@@ -48,7 +48,7 @@ public class UserController {
 
 		List<CA> list=amsService.findAll();
 		
-		theModel.addAttribute("allalumni",list);
+		theModel.addAttribute("allca",list);
 		
 		return "user/index";
 	}
