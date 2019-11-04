@@ -67,6 +67,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.antMatchers("/js/**").permitAll()
 			.antMatchers("/static/**").permitAll()
 			.antMatchers("/vendor/**").permitAll()
+			.antMatchers("/Event/**").permitAll()
 			.antMatchers("/resources/**").permitAll()
 			.anyRequest().authenticated()
 			.and()
@@ -89,7 +90,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 	
-		web.ignoring().antMatchers("/resources/**","/login/**","/static/**","/Script/**","/Style/**","/Icon/**",
+		web.ignoring().antMatchers("/Event/**","/resources/**","/login/**","/static/**","/Script/**","/Style/**","/Icon/**",
 				"/js/**","/vendor/**","/bootstrap/**","/Image/**","/cvdetails/**","/ams/**");
 		
 		//logoutSuccessUrl("/customLogout")
