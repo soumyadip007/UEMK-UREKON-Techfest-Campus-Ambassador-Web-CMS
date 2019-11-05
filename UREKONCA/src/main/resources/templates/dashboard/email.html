@@ -82,14 +82,23 @@
 	
      
          
-     <li class="nav-item  active ">
-	  <a class="nav-link active" th:href="@{/admin/all-ca}">
+     <li class="nav-item   ">
+	  <a class="nav-link " th:href="@{/admin/all-ca}">
           
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Add CA</span>
           </a>
         </li>
 
+     
+         
+     <li class="nav-item  active ">
+	  <a class="nav-link active" th:href="@{/admin/email}">
+          
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Email</span>
+          </a>
+        </li>
      
       </ul>
 
@@ -113,7 +122,7 @@
 	</tr>
 
 		
-			<tr>
+	<tr>
 	<td><br><dt class="col-sm-3">Subject: </dt></td>
 	<td><br><input type="text"  th:field="*{sub}"  class="form-control" 
 	required="" placeholder="Subject"></td>
