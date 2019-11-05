@@ -64,7 +64,7 @@ public class MailSender{
 			}
 			
 			String emailHost = "smtp.gmail.com";
-			String fromUser = "lightningspeedmatchmaker@gmail.com";//just the id alone without @gmail.com
+			String fromUser = "lightningspeedmatchmaker@gmail.com";
 			String fromUserEmailPassword = "Matchmadeinheaven2015%$#@";
 
 			
