@@ -185,8 +185,8 @@ public class AdminController {
 			//emailMessage.setText(emailBody);// for a text email
 			
 			String emailHost = "smtp.gmail.com";
-			String fromUser = "lightningspeedmatchmaker@gmail.com";//just the id alone without @gmail.com
-			String fromUserEmailPassword = "Matchmadeinheaven2015%$#@";
+			String fromUser = "spring.email.auth@gmail.com";//just the id alone without @gmail.com
+			String fromUserEmailPassword = "eclipsejava";
 
 			
 			try {
