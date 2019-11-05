@@ -38,8 +38,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring.entity.CA;
-import com.spring.entity.Email;
 import com.spring.service.CAService;
+import com.spring.utility.Email;
 /**
  * 
  * @author Soumyadip Chowdhury

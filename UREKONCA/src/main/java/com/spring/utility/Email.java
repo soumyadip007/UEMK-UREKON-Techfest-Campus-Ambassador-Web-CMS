@@ -1,4 +1,4 @@
-package com.spring.entity;
+package com.spring.utility;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +14,7 @@ import org.springframework.data.annotation.Transient;
  * @github soumyadip007
  *
  */
+
 public class Email {
 
 	String email;
