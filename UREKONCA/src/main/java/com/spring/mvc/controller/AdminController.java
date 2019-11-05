@@ -141,7 +141,9 @@ public class AdminController {
 		Properties emailProperties;
 		Session mailSession;
 		MimeMessage emailMessage;
-		Transport transport;
+		Transport transport = null;
+		
+		
 		Email ca=new Email();
 
 		
