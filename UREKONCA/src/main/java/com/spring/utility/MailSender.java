@@ -47,10 +47,8 @@ public class MailSender{
 			try {
 				emailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmails));
 			} catch (AddressException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (MessagingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	
