@@ -75,7 +75,6 @@ public class MailSender{
 			try {
 				transport.connect(emailHost, fromUser, fromUserEmailPassword);
 			} catch (MessagingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try {
@@ -83,21 +82,16 @@ public class MailSender{
 				
 				
 			} catch (MessagingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try {
 				transport.close();
 			} catch (MessagingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			}
 			catch (NoSuchProviderException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			//out.println("Email sent successfully.");
-		
 		}
 	}
