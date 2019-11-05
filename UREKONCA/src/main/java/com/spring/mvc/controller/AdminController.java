@@ -125,17 +125,17 @@ public class AdminController {
 
 	
 	@GetMapping("/email")
-	public String Email(Model theModel) {
+	public String Emaial(Model theModel) {
 	
 		Email obj=new Email();
 		
-		theModel.addAttribute("ca",ca);
+		theModel.addAttribute("ca",obj);
 		
 		return "dashboard/email";
 		
 	}
 	
-	@GetMapping("/email")
+	@PostMapping("/email")
 	public String Email(Model theModel) {
 
 		Properties emailProperties;
@@ -145,7 +145,7 @@ public class AdminController {
 		Email ca=new Email();
 
 		
-		String emailPort = "587";//gmail's smtp port
+		String emailPort = "587";
 
 		emailProperties = System.getProperties();
 		emailProperties.put("mail.smtp.port", emailPort);
@@ -192,10 +192,6 @@ public class AdminController {
 
 			
 			try {
-				transport = mailSession.getTransport("smtp");
-			
-
-			try {
 				transport.connect(emailHost, fromUser, fromUserEmailPassword);
 			} catch (MessagingException e) {
 				// TODO Auto-generated catch block
@@ -215,17 +211,14 @@ public class AdminController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			}
 			
 			//out.println("Email sent successfully.");
 		
-			
-		}
+		
 		
 		
 		theModel.addAttribute("ca",ca);
-		
-		return "dashboard/email";
 	}
 
+}
 }
