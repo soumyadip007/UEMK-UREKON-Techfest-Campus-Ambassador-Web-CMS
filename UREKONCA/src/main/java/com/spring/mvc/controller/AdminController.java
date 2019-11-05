@@ -99,7 +99,7 @@ public class AdminController {
 	public String Email(Model theModel) {
 
 		CA ca=new CA();
-		
+
 		theModel.addAttribute("ca",ca);
 		
 		return "redirect:/admin/all-ca";
