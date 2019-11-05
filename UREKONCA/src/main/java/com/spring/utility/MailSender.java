@@ -55,16 +55,13 @@ public class MailSender{
 			try {
 				emailMessage.setSubject(emailSubject);
 			} catch (MessagingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try {
 				emailMessage.setContent(emailBody, "text/html");
 			} catch (MessagingException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
-			}//for a html email
-			//emailMessage.setText(emailBody);// for a text email
+			}
 			
 			String emailHost = "smtp.gmail.com";
 			String fromUser = "lightningspeedmatchmaker@gmail.com";//just the id alone without @gmail.com
