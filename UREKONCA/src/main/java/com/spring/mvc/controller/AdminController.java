@@ -17,7 +17,6 @@ import java.util.Properties;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
-import javax.mail.NoSuchProviderException;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.AddressException;
@@ -136,7 +135,7 @@ public class AdminController {
 	}
 	
 	@PostMapping("/email")
-	public String Email(Model theModel) {
+	public String Emails(Model theModel) {
 
 		Properties emailProperties;
 		Session mailSession;
@@ -213,14 +212,8 @@ public class AdminController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			//out.println("Email sent successfully.");
 		
-		
-		
-		
-		theModel.addAttribute("ca",ca);
 	}
-
+		theModel.addAttribute("ca",ca);
 }
 }
