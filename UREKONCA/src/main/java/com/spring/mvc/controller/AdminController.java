@@ -135,16 +135,13 @@ public class AdminController {
 	}
 	
 	@PostMapping("/email")
-	public String Emails(Model theModel) {
+	public String Emails(@ModelAttribute("ca") Email ca) {
 
 		Properties emailProperties;
 		Session mailSession;
 		MimeMessage emailMessage;
 		Transport transport = null;
 		
-		
-		Email ca=new Email();
-
 		
 		String emailPort = "587";
 
@@ -214,7 +211,6 @@ public class AdminController {
 			}
 		
 	}
-		theModel.addAttribute("ca",ca);
 		return  "redirect:/admin/all-ca";
 }
 }
