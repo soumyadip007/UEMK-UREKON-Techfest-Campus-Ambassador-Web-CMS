@@ -1,7 +1,33 @@
 package com.spring.mvc.controller;
 
 
+import java.security.NoSuchProviderException;
 import java.util.List;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Properties;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.NoSuchProviderException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -96,11 +122,107 @@ public class AdminController {
 	}
 
 	
+
+	
+	@GetMapping("/email")
+	public String Email(Model theModel) {
+	
+		Email obj=new Email();
+		
+		theModel.addAttribute("ca",ca);
+		
+		return "dashboard/email";
+		
+	}
+	
 	@GetMapping("/email")
 	public String Email(Model theModel) {
 
+		Properties emailProperties;
+		Session mailSession;
+		MimeMessage emailMessage;
+		Transport transport;
 		Email ca=new Email();
 
+		
+		String emailPort = "587";//gmail's smtp port
+
+		emailProperties = System.getProperties();
+		emailProperties.put("mail.smtp.port", emailPort);
+		emailProperties.put("mail.smtp.auth", "true");
+		emailProperties.put("mail.smtp.starttls.enable", "true");
+		
+		
+		String[] toEmails=new String[10] ;
+		toEmails[0]=ca.getEmail();
+		String emailSubject =ca.getSub();
+		String emailBody = ca.getBody();
+
+		mailSession = Session.getDefaultInstance(emailProperties, null);
+		emailMessage = new MimeMessage(mailSession);
+
+		for (int i = 0; i < toEmails.length; i++) {
+			try {
+				emailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmails[i]));
+			} catch (AddressException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (MessagingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	
+			try {
+				emailMessage.setSubject(emailSubject);
+			} catch (MessagingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				emailMessage.setContent(emailBody, "text/html");
+			} catch (MessagingException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}//for a html email
+			//emailMessage.setText(emailBody);// for a text email
+			
+			String emailHost = "smtp.gmail.com";
+			String fromUser = "lightningspeedmatchmaker@gmail.com";//just the id alone without @gmail.com
+			String fromUserEmailPassword = "Matchmadeinheaven2015%$#@";
+
+			
+			try {
+				transport = mailSession.getTransport("smtp");
+			
+
+			try {
+				transport.connect(emailHost, fromUser, fromUserEmailPassword);
+			} catch (MessagingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				transport.sendMessage(emailMessage, emailMessage.getAllRecipients());
+				
+				
+			} catch (MessagingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				transport.close();
+			} catch (MessagingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			}
+			
+			//out.println("Email sent successfully.");
+		
+			
+		}
+		
+		
 		theModel.addAttribute("ca",ca);
 		
 		return "dashboard/email";
