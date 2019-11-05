@@ -94,5 +94,15 @@ public class AdminController {
 		return "redirect:/admin/all-ca";
 	}
 
+	
+	@GetMapping("/email")
+	public String Email(Model theModel) {
+
+		CA ca=new CA();
+		
+		theModel.addAttribute("ca",ca);
+		
+		return "redirect:/admin/all-ca";
+	}
 
 }
