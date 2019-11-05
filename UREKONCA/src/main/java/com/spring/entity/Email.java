@@ -46,6 +46,11 @@ public class Email {
 		this.body = body;
 	}
 
+	@Override
+	public String toString() {
+		return "Email [email=" + email + ", sub=" + sub + ", body=" + body + "]";
+	}
+
 	
 	
 }
