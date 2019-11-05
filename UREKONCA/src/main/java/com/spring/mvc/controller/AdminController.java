@@ -215,5 +215,6 @@ public class AdminController {
 		
 	}
 		theModel.addAttribute("ca",ca);
+		return  "redirect:/admin/all-ca";
 }
 }
